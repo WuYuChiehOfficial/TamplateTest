@@ -1,0 +1,339 @@
+@mixin image-block($path, $cache: false) {
+  background-image: image-url($path, false, $cache);
+  width: image-width($path);
+  height: image-height($path);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+@mixin full-wimage($path, $cache: false) {
+  display: inline-block;
+  background-image: image-url($path, false, $cache);
+  width: 100%;
+  height: image-height($path);
+  background-repeat: no-repeat;
+}
+@mixin full-image($path, $cache: false) {
+  display: inline-block;
+  background-image: image-url($path, false, $cache);
+  width: 100%;
+  height: 100%;
+  height: image-height($path);
+  background-repeat: no-repeat;
+}
+@mixin layout($Width) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $Width;
+}
+
+//等腰三角形
+@mixin triangle-tp($triangle1, $triangle2, $triangle3, $color) {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 $triangle1 $triangle2 $triangle3;
+  border-color: transparent transparent $color transparent;
+}
+@mixin triangle-rt($triangle1, $triangle2, $triangle3, $color) {
+  border-style: solid;
+  border-width: $triangle1 0 $triangle2 $triangle3;
+  border-color: transparent transparent transparent $color;
+}
+@mixin triangle-bm($triangle1, $triangle2, $triangle3, $color) {
+  border-style: solid;
+  border-width: $triangle1 $triangle2 0 $triangle3;
+  border-color: $color transparent transparent transparent;
+}
+@mixin triangle-lt($triangle1, $triangle2, $triangle3, $color) {
+  border-style: solid;
+  border-width: $triangle1 $triangle2 $triangle3 0;
+  border-color: transparent $color transparent transparent;
+}
+
+//直角三角形
+
+@mixin triangle2-tp($triangle1, $triangle2, $color) {
+  border-style: solid;
+  border-width: 0 $triangle1 $triangle2 0;
+  border-color: transparent $color transparent transparent;
+}
+@mixin triangle2-rt($triangle1, $triangle2, $color) {
+  border-style: solid;
+  border-width: $triangle1 $triangle2 0 0;
+  border-color: transparent transparent $color transparent;
+}
+@mixin triangle2-bm($triangle1, $triangle2, $color) {
+  border-style: solid;
+  border-width: $triangle1 0 0 $triangle2;
+  border-color: transparent transparent transparent $color;
+}
+@mixin triangle2-lt($triangle1, $triangle2, $color) {
+  border-style: solid;
+  border-width: $triangle1 $triangle2 0 0;
+  border-color: $color transparent transparent transparent;
+}
+//flex
+@mixin flex-style($justify, $ms-justify, $alignItem, $ms-alignItem, $wrap, $ms-wrap) {
+  display: flex;
+  display: -ms-flexbox;
+  justify-content: $justify;
+  -ms-flex-pack: $ms-justify;
+  align-items: $alignItem;
+  -ms-flex-align: $ms-alignItem;
+  flex-wrap: $wrap;
+  -ms-flex-wrap: $ms-wrap;
+}
+
+@mixin adjust-font-size-to($base-font-size) {
+  font-size: $base-font-size;
+}
+
+@mixin box-sizing($border-box) {
+  box-sizing: border-box;
+}
+
+// px轉換rem設定
+@function pxTorem($px) {
+  //$px為需要轉換的字號
+  @return $px / 16 * 1rem;
+}
+
+// RWD設定
+@mixin minWidth {
+  @media (min-width: 981px) {
+    @content;
+  }
+}
+@mixin maxWidth($Width) {
+  @media screen and (max-width: $Width) {
+    @content;
+  }
+}
+
+@mixin lpc {
+  @media (max-width: 1620px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin bmd {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin lpad {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mb {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+@mixin mmb {
+  @media (max-width: 580px) {
+    @content;
+  }
+}
+@mixin mmbb {
+  @media (max-width: 450px) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+@mixin ssm {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+// 其他mixin
+@mixin background-img($position: center center, $repeat: no-repeat, $size: contain) {
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+  box-sizing: border-box;
+}
+
+@mixin text-shadow($string) {
+  text-shadow: $string;
+}
+
+@mixin box-shadow($string) {
+  -webkit-box-shadow: $string;
+  -moz-box-shadow: $string;
+  box-shadow: $string;
+}
+
+@mixin drop-shadow($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  -webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  -moz-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin inner-shadow($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  -webkit-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  -moz-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+@mixin border-radiuses($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  border-top-left-radius: $topleft;
+
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+@mixin opacity($opacity: 0.5) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin gradient($startColor: #eee, $endColor: white) {
+  background-color: $startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+  background: -webkit-linear-gradient(top, $startColor, $endColor);
+  background: -moz-linear-gradient(top, $startColor, $endColor);
+  background: -ms-linear-gradient(top, $startColor, $endColor);
+  background: -o-linear-gradient(top, $startColor, $endColor);
+}
+
+@mixin horizontal-gradient($startColor: #eee, $endColor: white) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+  background-image: -moz-linear-gradient(left, $startColor, $endColor);
+  background-image: -ms-linear-gradient(left, $startColor, $endColor);
+  background-image: -o-linear-gradient(left, $startColor, $endColor);
+}
+
+@mixin animation($arguments) {
+  -webkit-animation: $arguments;
+  -moz-animation: $arguments;
+  -ms-animation: $arguments;
+  animation: $arguments;
+}
+
+@mixin transform($string) {
+  -webkit-transform: $string;
+  -moz-transform: $string;
+  -ms-transform: $string;
+  -o-transform: $string;
+  transform: $string;
+}
+
+@mixin scale($factor) {
+  -webkit-transform: scale($factor);
+  -moz-transform: scale($factor);
+  -ms-transform: scale($factor);
+  -o-transform: scale($factor);
+  transform: scale($factor);
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin skew($deg, $deg2) {
+  -webkit-transform: skew($deg, $deg2);
+  -moz-transform: skew($deg, $deg2);
+  -ms-transform: skew($deg, $deg2);
+  -o-transform: skew($deg, $deg2);
+  transform: skew($deg, $deg2);
+}
+
+@mixin translate($x, $y: 0) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin translate3d($x, $y: 0, $z: 0) {
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  -ms-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+@mixin perspective($value: 1000) {
+  -webkit-perspective: $value;
+  -moz-perspective: $value;
+  -ms-perspective: $value;
+  perspective: $value;
+}
+
+@mixin transform-origin($x: center, $y: center) {
+  -webkit-transform-origin: $x $y;
+  -moz-transform-origin: $x $y;
+  -ms-transform-origin: $x $y;
+  -o-transform-origin: $x $y;
+  transform-origin: $x $y;
+}

@@ -1,0 +1,22 @@
+@import "_reset.scss";
+@import "_mixin.scss";
+
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 299;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  &.show {
+    display: block;
+  }
+}

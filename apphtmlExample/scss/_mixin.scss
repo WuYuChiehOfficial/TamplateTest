@@ -1,0 +1,44 @@
+@mixin image-block($path, $cache: false) {
+  background-image: image-url($path, false, $cache);
+  width: image-width($path);
+  height: image-height($path);
+  background-repeat: no-repeat;
+}
+@mixin wimage-block($path, $cache: false) {
+  background-image: image-url($path, false, $cache);
+  width: 100%;
+  height: image-height($path);
+  background-repeat: no-repeat;
+}
+@mixin full-image($path, $cache: false) {
+  background-image: image-url($path, false, $cache);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+@mixin layout($Width) {
+  @include container();
+  max-width: $Width;
+}
+
+@mixin minWidth {
+  @media (min-width: 981px) {
+    @content;
+  }
+}
+@mixin maxWidth($Width) {
+  @media screen and (max-width: $Width) {
+    @content;
+  }
+}
+
+//flex
+@mixin flex-style($direction: row, $justify: center, $align: center, $wrap: nowrap, $gap: unset) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+  @content;
+}

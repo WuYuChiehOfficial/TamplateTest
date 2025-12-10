@@ -1,0 +1,211 @@
+@import "_reset.scss";
+@import "_mixin.scss";
+
+.project {
+  padding: 130px 20px 100px;
+}
+.lbContainer {
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  // border: 2px solid #1a94d7;
+  position: relative;
+  .closeButton {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background-color: #ffac3d;
+    border-radius: 50%;
+    top: 25px;
+    right: 25px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 65%;
+      height: 2px;
+      background-color: #fff;
+      left: 18%;
+      top: 48%;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(135deg);
+    }
+    @include m {
+      width: 45px;
+      height: 45px;
+      top: 15px;
+      right: 15px;
+    }
+    @include mmbb {
+      width: 35px;
+      height: 35px;
+      top: 10px;
+      right: 10px;
+    }
+  }
+  .content {
+    border-radius: 15px 15px 0 0 ;
+    border: 2px solid #ffac3d;
+    background-color: #fff;
+    padding: 40px 40px 35px;
+    @include m {
+      padding: 30px 30px 15px;
+    }
+    @include mmbb {
+      padding: 20px 20px 15px;
+    }
+  }
+  .pic {
+    width: 100%;
+    padding-bottom: percentage(418/829);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 35px;
+  }
+  .pic_info {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    @include m {
+      padding-top: 15px;
+    }
+    p {
+      color: #4a4542;
+      font-weight: bold;
+      font-size: 41px;
+      width: 60%;
+      @include m {
+        font-size: 20px;
+      }
+      @include mmbb {
+        font-size: 16px;
+      }
+    }
+  }
+  .congratulation {
+    background-image: url(../images/lightbox_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    line-height: 1.3;
+    padding: 10px;
+  }
+
+  .yellow_txt {
+    color: #d92724;
+    font-weight: bold;
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 5px;
+    @include m {
+      font-size: 30px;
+    }
+    @include mmbb {
+      font-size: 20px;
+    }
+  }
+  .white_txt {
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    @include m {
+      font-size: 26px;
+    }
+    @include mmbb {
+      font-size: 16px;
+    }
+  }
+  .txt_sm{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 10px;
+    @include m{
+      font-size: 18px;
+      margin-top: 7px;
+    }
+    @include mmbb{
+      font-size: 12px;
+    }
+  }
+  .coupon_btn{
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    margin: 10px auto;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #d92724;
+    padding: 10px 5px;
+    border-radius: 40px;
+    text-shadow: 1px 1px 4px #0000008b;
+    letter-spacing: 1px;
+    @include m{
+      max-width: 130px;
+      font-size: 14px;
+      padding: 7px;
+    }
+
+  }
+  .link {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transform: translateX(-8px);
+    &:hover {
+      span {
+        transform: translate(8px, 8px);
+        @include m {
+          transform: translate(5px, 5px);
+        }
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 8px;
+      top: 8px;
+      border-radius: 70px;
+      background: #ffac3d;
+      z-index: -1;
+      @include m {
+        left: 5px;
+        top: 5px;
+      }
+    }
+    span {
+      color: white;
+      font-size: 43px;
+      border-radius: 70px;
+      font-weight: bold;
+      background-color: #d92724;
+      padding: 10px 45px;
+      display: inline-block;
+      word-break: keep-all;
+      position: relative;
+      width: 100%;
+      transition: all 0.25s linear;
+      @include m {
+        padding: 5px 30px;
+        font-size: 20px;
+      }
+      @include mmbb {
+        font-size: 16px;
+      }
+    }
+  }
+}

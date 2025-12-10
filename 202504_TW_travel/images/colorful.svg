@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_デザイン" data-name="デザイン" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.33 80.17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5dc2d0;
+      }
+
+      .cls-2 {
+        fill: #fdd23e;
+      }
+
+      .cls-3 {
+        fill: #ee869a;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="13.98" y="24.09" width="5.32" height="5.32" transform="translate(-8.15 7.3) rotate(-20)"/>
+  <rect class="cls-1" x="29.06" y="36.57" width="4.5" height="4.5" transform="translate(-18.55 37.85) rotate(-50)"/>
+  <rect class="cls-3" x="17.14" y="49.28" width="5.32" height="5.32" transform="translate(-34.79 62.42) rotate(-80)"/>
+  <rect class="cls-2" x="67.59" y="35.17" width="5.32" height="5.32" transform="translate(20.79 100.44) rotate(-80)"/>
+  <rect class="cls-3" x="49.84" y="74.43" width="5.32" height="5.32" transform="translate(-32.53 115.41) rotate(-80)"/>
+  <rect class="cls-2" x="36.8" y="57.39" width="5.52" height="5.52" transform="translate(-9.84 7.78) rotate(-10)"/>
+  <rect class="cls-1" x="43.72" y="19.48" width="5.52" height="5.52" transform="translate(-3.16 8.41) rotate(-10)"/>
+  <rect class="cls-3" x="50.58" y="34.41" width="4.79" height="4.79" transform="translate(-5.59 9.76) rotate(-10)"/>
+  <rect class="cls-1" x="52.97" y="51.94" width="5.45" height="5.45" transform="translate(-19.5 75.57) rotate(-60)"/>
+  <rect class="cls-1" x="27.59" y="1" width="5.45" height="5.45" transform="translate(11.93 28.11) rotate(-60)"/>
+  <rect class="cls-1" x=".23" y="53.7" width="5.45" height="5.45" transform="translate(-53.52 54.45) rotate(-85)"/>
+  <rect class="cls-1" x="17.95" y="71.15" width="5.45" height="5.45" transform="translate(-53.64 54.85) rotate(-60)"/>
+</svg>

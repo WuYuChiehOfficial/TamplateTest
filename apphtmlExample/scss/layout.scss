@@ -1,0 +1,58 @@
+@import '_reset.scss';
+@import '_variable.scss';
+@import '_mixin.scss';
+
+//========================
+// page
+//========================
+
+.project {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  line-height: 1.5;
+  * {
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei';
+  }
+  a {
+    color: #222222;
+    text-decoration: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.project {
+  margin: 0 auto;
+  max-width: 980px;
+  padding-top: 20px;
+  background-image: url(../images/bg.png), url(../images/bg1.png);
+  background-size: contain;
+  background-repeat: no-repeat, repeat;
+  background-color: #ffd6ae;
+  @media screen and (max-width: 576px) {
+    padding-top: 0px;
+  }
+  .footer {
+    background-repeat: no-repeat;
+    background-image: url(../images/footer.svg);
+    padding-top: 18%;
+    padding-bottom: 2%;
+    background-size: cover;
+    p {
+      text-align: center;
+      color: #fff;
+    }
+  }
+}

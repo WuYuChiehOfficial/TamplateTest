@@ -1,0 +1,200 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1.5;
+  touch-action: manipulation;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  touch-action: manipulation;
+  scroll-behavior: smooth;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  width: 100%;
+  border: none;
+}
+
+
+.project {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+.project * {
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", "Microsoft JhengHei";
+}
+.project a {
+  color: #222222;
+  text-decoration: none;
+}
+.project a:focus {
+  outline: none;
+}
+.project .container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.project {
+  margin: 0 auto;
+  max-width: 980px;
+  padding-top: 20px;
+  background-image: url(../images/bg.png), url(../images/bg1.png);
+  background-size: contain;
+  background-repeat: no-repeat, repeat;
+  background-color: #ffd6ae;
+}
+@media screen and (max-width: 576px) {
+  .project {
+    padding-top: 0px;
+  }
+}
+.project .footer {
+  background-repeat: no-repeat;
+  background-image: url(../images/footer.svg);
+  padding-top: 18%;
+  padding-bottom: 2%;
+  background-size: cover;
+}
+.project .footer p {
+  text-align: center;
+  color: #fff;
+}
