@@ -1,0 +1,121 @@
+/* Footer Styles */
+
+/* Footer Style 1 */
+/* 簡單且專業的頁腳，深色背景搭配置中的文字。 */
+.footer-style-1 {
+    background-color: #343a40;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #dee2e6;
+    transition: background-color 0.3s;
+}
+.footer-style-1:hover {
+    background-color: #495057;
+}
+
+/* Footer Style 2 */
+/* 漸層頁腳，展現現代且時尚的外觀。 */
+.footer-style-2 {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+.footer-style-2:hover {
+    box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Style 3 */
+/* 極簡頁腳，搭配高亮邊框，呈現乾淨的外觀。 */
+.footer-style-3 {
+    background-color: #6c757d;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px;
+    text-align: right;
+    border-bottom: 5px solid #28a745;
+    transition: border-color 0.3s;
+}
+.footer-style-3:hover {
+    border-color: #218838;
+}
+
+/* Footer Style 4 */
+/* 柔和的粉色主題，適合女性旅遊網站。 */
+.footer-style-4 {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #f5c6cb;
+    transition: transform 0.3s;
+}
+.footer-style-4:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Style 5 */
+/* 綠色自然主題，適合生態旅遊網站。 */
+.footer-style-5 {
+    background-color: #d4edda;
+    color: #155724;
+    font-size: 15px;
+    padding: 25px;
+    text-align: justify;
+    border-left: 5px solid #c3e6cb;
+    transition: background-color 0.3s;
+}
+.footer-style-5:hover {
+    background-color: #c3e6cb;
+}
+
+/* Footer Style 6 */
+/* 黃色活力主題，適合家庭旅遊網站。 */
+.footer-style-6 {
+    background-color: #fff3cd;
+    color: #856404;
+    font-size: 14px;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #ffeeba;
+    transition: color 0.3s;
+}
+.footer-style-6:hover {
+    color: #6c4a00;
+}
+
+/* Footer Style 7 */
+/* 藍色科技主題，適合旅遊科技網站。 */
+.footer-style-7 {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    font-size: 16px;
+    padding: 20px;
+    text-align: left;
+    border-right: 4px solid #bee5eb;
+    transition: transform 0.3s;
+}
+.footer-style-7:hover {
+    transform: translateX(10px);
+}
+
+/* Footer Style 8 */
+/* 灰色中性主題，適合商務旅遊網站。 */
+.footer-style-8 {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 14px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    transition: background-color 0.3s;
+}
+.footer-style-8:hover {
+    background-color: #dee2e6;
+}

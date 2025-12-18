@@ -1,0 +1,121 @@
+/* Header Styles */
+
+/* Header Style 1 */
+/* 清新且專業的設計，適合旅遊資訊展示。 */
+.header-style-1 {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #dee2e6;
+    transition: background-color 0.3s;
+}
+.header-style-1:hover {
+    background-color: #e9ecef;
+}
+
+/* Header Style 2 */
+/* 漸層背景設計，展現活力與動感。 */
+.header-style-2 {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-size: 28px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+.header-style-2:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Style 3 */
+/* 深色主題搭配高亮邊框，營造大膽且優雅的外觀。 */
+.header-style-3 {
+    background-color: #343a40;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 10px;
+    text-align: right;
+    border-top: 5px solid #ffc107;
+    transition: border-color 0.3s;
+}
+.header-style-3:hover {
+    border-color: #ffca2c;
+}
+
+/* Header Style 4 */
+/* 柔和的粉色主題，適合女性旅遊網站。 */
+.header-style-4 {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-size: 26px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #f5c6cb;
+    transition: transform 0.3s;
+}
+.header-style-4:hover {
+    transform: scale(1.05);
+}
+
+/* Header Style 5 */
+/* 綠色自然主題，適合生態旅遊網站。 */
+.header-style-5 {
+    background-color: #d4edda;
+    color: #155724;
+    font-size: 24px;
+    padding: 25px;
+    text-align: justify;
+    border-left: 5px solid #c3e6cb;
+    transition: background-color 0.3s;
+}
+.header-style-5:hover {
+    background-color: #c3e6cb;
+}
+
+/* Header Style 6 */
+/* 黃色活力主題，適合家庭旅遊網站。 */
+.header-style-6 {
+    background-color: #fff3cd;
+    color: #856404;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #ffeeba;
+    transition: color 0.3s;
+}
+.header-style-6:hover {
+    color: #6c4a00;
+}
+
+/* Header Style 7 */
+/* 藍色科技主題，適合旅遊科技網站。 */
+.header-style-7 {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    font-size: 22px;
+    padding: 20px;
+    text-align: left;
+    border-right: 4px solid #bee5eb;
+    transition: transform 0.3s;
+}
+.header-style-7:hover {
+    transform: translateX(10px);
+}
+
+/* Header Style 8 */
+/* 灰色中性主題，適合商務旅遊網站。 */
+.header-style-8 {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 24px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    transition: background-color 0.3s;
+}
+.header-style-8:hover {
+    background-color: #dee2e6;
+}

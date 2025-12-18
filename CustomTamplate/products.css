@@ -1,0 +1,240 @@
+/* Travel Product Styles */
+
+/* Product Style 1 */
+/* 基本卡片設計，帶有細微陰影，適合一般用途。 */
+.product-style-1 {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.product-style-1:hover {
+    transform: scale(1.05);
+}
+
+/* Product Style 2 */
+/* 帶有現代陰影的邊框卡片，展現高級感。 */
+.product-style-2 {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #e9ecef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+.product-style-2:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Style 3 */
+/* 極簡設計，呈現乾淨且簡單的外觀。 */
+.product-style-3 {
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f8f9fa;
+    box-shadow: none;
+    transition: background-color 0.3s;
+}
+.product-style-3:hover {
+    background-color: #e9ecef;
+}
+
+/* Product Style 4 */
+/* 虛線邊框搭配大膽陰影，展現創意且獨特的外觀。 */
+.product-style-4 {
+    border: 1px dashed #6c757d;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+.product-style-4:hover {
+    transform: rotate(3deg);
+}
+
+/* Product Style 5 */
+/* 雙重邊框搭配強烈陰影，營造奢華感。 */
+.product-style-5 {
+    border: 3px double #28a745;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 25px;
+    background-color: #f1f3f5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s;
+}
+.product-style-5:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Style 6 */
+/* 溫暖且吸引人的設計，採用黃色主題。 */
+.product-style-6 {
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #fff3cd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+.product-style-6:hover {
+    background-color: #ffeeba;
+}
+
+/* Product Style 7 */
+/* 清新且令人耳目一新的設計，採用藍色主題。 */
+.product-style-7 {
+    border: 2px solid #17a2b8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #d1ecf1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+.product-style-7:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Style 8 */
+/* 中性且專業的設計，採用灰色主題。 */
+.product-style-8 {
+    border: 1px solid #343a40;
+    border-radius: 0;
+    padding: 10px;
+    margin: 5px;
+    background-color: #e9ecef;
+    box-shadow: none;
+    transition: border-color 0.3s;
+}
+.product-style-8:hover {
+    border-color: #495057;
+}
+
+/* Product Style 9 */
+/* 點狀邊框搭配大膽陰影，展現俏皮且創意的外觀。 */
+.product-style-9 {
+    border: 1px dotted #6c757d;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+.product-style-9:hover {
+    transform: scale(1.1);
+}
+
+/* Product Style 10 */
+/* 凹槽邊框搭配強烈陰影，呈現精緻的外觀。 */
+.product-style-10 {
+    border: 3px groove #007bff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 25px;
+    background-color: #f8f9fa;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s;
+}
+.product-style-10:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Style 11 */
+/* 動態漸層背景，展現科技感。 */
+.product-style-11 {
+    border: 1px solid #6c757d;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+.product-style-11:hover {
+    background: linear-gradient(45deg, #6610f2, #007bff);
+}
+
+/* Product Style 12 */
+/* 圓形卡片設計，適合展示圖像。 */
+.product-style-12 {
+    border: 2px solid #28a745;
+    border-radius: 50%;
+    padding: 30px;
+    margin: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+.product-style-12:hover {
+    transform: rotate(360deg);
+}
+
+/* Product Style 13 */
+/* 卡片內帶有動畫效果，吸引目光。 */
+.product-style-13 {
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #fff3cd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+.product-style-13::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: left 0.5s;
+}
+.product-style-13:hover::before {
+    left: 100%;
+}
+
+/* Product Style 14 */
+/* 透明背景搭配細邊框，展現優雅感。 */
+.product-style-14 {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.product-style-14:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Product Style 15 */
+/* 動態陰影效果，增添趣味性。 */
+.product-style-15 {
+    border: 1px solid #6c757d;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+.product-style-15:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
