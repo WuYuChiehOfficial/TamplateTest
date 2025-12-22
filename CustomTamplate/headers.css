@@ -1,12 +1,19 @@
 /* Header Styles */
+/* RWD 響應式設計 - 支援桌面、平板、手機 */
+
+/* 共用響應式設定 */
+[class^="header-style-"] {
+    box-sizing: border-box;
+    width: 100%;
+}
 
 /* Header Style 1 */
 /* 清新且專業的設計，適合旅遊資訊展示。 */
 .header-style-1 {
     background-color: #f8f9fa;
     color: #343a40;
-    font-size: 24px;
-    padding: 20px;
+    font-size: clamp(18px, 4vw, 24px);
+    padding: clamp(12px, 3vw, 20px);
     text-align: center;
     border-bottom: 2px solid #dee2e6;
     transition: background-color 0.3s;
@@ -20,8 +27,8 @@
 .header-style-2 {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
-    font-size: 28px;
-    padding: 15px;
+    font-size: clamp(20px, 4.5vw, 28px);
+    padding: clamp(10px, 2.5vw, 15px);
     text-align: left;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
@@ -35,8 +42,8 @@
 .header-style-3 {
     background-color: #343a40;
     color: #ffffff;
-    font-size: 22px;
-    padding: 10px;
+    font-size: clamp(16px, 3.5vw, 22px);
+    padding: clamp(8px, 2vw, 10px);
     text-align: right;
     border-top: 5px solid #ffc107;
     transition: border-color 0.3s;
@@ -50,14 +57,14 @@
 .header-style-4 {
     background-color: #f8d7da;
     color: #721c24;
-    font-size: 26px;
-    padding: 20px;
+    font-size: clamp(18px, 4vw, 26px);
+    padding: clamp(12px, 3vw, 20px);
     text-align: center;
     border: 2px solid #f5c6cb;
     transition: transform 0.3s;
 }
 .header-style-4:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Header Style 5 */
@@ -65,8 +72,8 @@
 .header-style-5 {
     background-color: #d4edda;
     color: #155724;
-    font-size: 24px;
-    padding: 25px;
+    font-size: clamp(18px, 4vw, 24px);
+    padding: clamp(15px, 3.5vw, 25px);
     text-align: justify;
     border-left: 5px solid #c3e6cb;
     transition: background-color 0.3s;
@@ -80,8 +87,8 @@
 .header-style-6 {
     background-color: #fff3cd;
     color: #856404;
-    font-size: 20px;
-    padding: 15px;
+    font-size: clamp(16px, 3.5vw, 20px);
+    padding: clamp(10px, 2.5vw, 15px);
     text-align: center;
     border-bottom: 3px solid #ffeeba;
     transition: color 0.3s;
@@ -95,14 +102,14 @@
 .header-style-7 {
     background-color: #d1ecf1;
     color: #0c5460;
-    font-size: 22px;
-    padding: 20px;
+    font-size: clamp(16px, 3.5vw, 22px);
+    padding: clamp(12px, 3vw, 20px);
     text-align: left;
     border-right: 4px solid #bee5eb;
     transition: transform 0.3s;
 }
 .header-style-7:hover {
-    transform: translateX(10px);
+    transform: translateX(5px);
 }
 
 /* Header Style 8 */
@@ -110,12 +117,48 @@
 .header-style-8 {
     background-color: #e9ecef;
     color: #495057;
-    font-size: 24px;
-    padding: 30px;
+    font-size: clamp(18px, 4vw, 24px);
+    padding: clamp(15px, 4vw, 30px);
     text-align: center;
     border: 1px solid #ced4da;
     transition: background-color 0.3s;
 }
 .header-style-8:hover {
     background-color: #dee2e6;
+}
+
+/* ============================================
+   響應式斷點設計
+   ============================================ */
+
+/* 平板裝置 (max-width: 768px) */
+@media (max-width: 768px) {
+    [class^="header-style-"] {
+        text-align: center;
+    }
+    .header-style-3 {
+        text-align: center;
+    }
+    .header-style-7 {
+        border-right: none;
+        border-bottom: 4px solid #bee5eb;
+    }
+    .header-style-7:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* 手機裝置 (max-width: 480px) */
+@media (max-width: 480px) {
+    [class^="header-style-"] {
+        border-radius: 0;
+    }
+    .header-style-4:hover,
+    .header-style-7:hover {
+        transform: none;
+    }
+    .header-style-5 {
+        text-align: left;
+        border-left-width: 3px;
+    }
 }

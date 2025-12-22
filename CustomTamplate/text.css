@@ -1,12 +1,19 @@
 /* Text Description Styles */
+/* RWD 響應式設計 - 支援桌面、平板、手機 */
+
+/* 共用響應式設定 */
+[class^="text-style-"] {
+    box-sizing: border-box;
+    width: 100%;
+}
 
 /* Text Style 1 */
 /* 標準文字樣式，適合一般可讀性需求。 */
 .text-style-1 {
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #343a40;
     line-height: 1.5;
-    margin: 10px 0;
+    margin: clamp(6px, 1.5vw, 10px) 0;
     transition: color 0.3s;
 }
 .text-style-1:hover {
@@ -16,24 +23,24 @@
 /* Text Style 2 */
 /* 斜體樣式，強調優雅與重點。 */
 .text-style-2 {
-    font-size: 18px;
+    font-size: clamp(15px, 3vw, 18px);
     color: #6c757d;
     line-height: 1.8;
-    margin: 15px 0;
+    margin: clamp(10px, 2vw, 15px) 0;
     font-style: italic;
     transition: font-size 0.3s;
 }
 .text-style-2:hover {
-    font-size: 19px;
+    font-size: clamp(16px, 3.2vw, 19px);
 }
 
 /* Text Style 3 */
 /* 帶有底線的樣式，用於突出重要資訊。 */
 .text-style-3 {
-    font-size: 14px;
+    font-size: clamp(12px, 2.2vw, 14px);
     color: #007bff;
     line-height: 1.4;
-    margin: 5px 0;
+    margin: clamp(3px, 1vw, 5px) 0;
     text-decoration: underline;
     transition: text-decoration-color 0.3s;
 }
@@ -44,10 +51,10 @@
 /* Text Style 4 */
 /* 粗體且大字體樣式，用於強調重點。 */
 .text-style-4 {
-    font-size: 20px;
+    font-size: clamp(16px, 3.5vw, 20px);
     color: #28a745;
     line-height: 2;
-    margin: 20px 0;
+    margin: clamp(12px, 3vw, 20px) 0;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -58,10 +65,10 @@
 /* Text Style 5 */
 /* 大寫且小字體樣式，用於標籤或警告。 */
 .text-style-5 {
-    font-size: 12px;
+    font-size: clamp(10px, 2vw, 12px);
     color: #dc3545;
     line-height: 1.2;
-    margin: 5px 0;
+    margin: clamp(3px, 1vw, 5px) 0;
     text-transform: uppercase;
     transition: letter-spacing 0.3s;
 }
@@ -72,12 +79,12 @@
 /* Text Style 6 */
 /* 柔和的黃色主題，適合活動說明。 */
 .text-style-6 {
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #856404;
     line-height: 1.6;
-    margin: 10px 0;
+    margin: clamp(6px, 1.5vw, 10px) 0;
     background-color: #fff3cd;
-    padding: 5px;
+    padding: clamp(3px, 1vw, 5px);
     border-radius: 3px;
     transition: background-color 0.3s;
 }
@@ -88,12 +95,12 @@
 /* Text Style 7 */
 /* 藍色科技主題，適合產品清單標題。 */
 .text-style-7 {
-    font-size: 18px;
+    font-size: clamp(15px, 3vw, 18px);
     color: #0c5460;
     line-height: 1.8;
-    margin: 15px 0;
+    margin: clamp(10px, 2vw, 15px) 0;
     border-left: 4px solid #bee5eb;
-    padding-left: 10px;
+    padding-left: clamp(6px, 1.5vw, 10px);
     transition: border-color 0.3s;
 }
 .text-style-7:hover {
@@ -103,14 +110,46 @@
 /* Text Style 8 */
 /* 灰色中性主題，適合商務旅遊網站的描述。 */
 .text-style-8 {
-    font-size: 14px;
+    font-size: clamp(12px, 2.2vw, 14px);
     color: #495057;
     line-height: 1.5;
-    margin: 10px 0;
+    margin: clamp(6px, 1.5vw, 10px) 0;
     font-style: normal;
     border-bottom: 1px dashed #ced4da;
     transition: border-color 0.3s;
 }
 .text-style-8:hover {
     border-color: #adb5bd;
+}
+
+/* ============================================
+   響應式斷點設計
+   ============================================ */
+
+/* 平板裝置 (max-width: 768px) */
+@media (max-width: 768px) {
+    [class^="text-style-"] {
+        line-height: 1.6;
+    }
+    .text-style-7 {
+        border-left-width: 3px;
+        padding-left: 8px;
+    }
+}
+
+/* 手機裝置 (max-width: 480px) */
+@media (max-width: 480px) {
+    [class^="text-style-"] {
+        line-height: 1.5;
+    }
+    .text-style-2:hover {
+        font-size: inherit;
+    }
+    .text-style-5:hover {
+        letter-spacing: 0.5px;
+    }
+    .text-style-7 {
+        border-left-width: 2px;
+        padding-left: 6px;
+    }
 }
