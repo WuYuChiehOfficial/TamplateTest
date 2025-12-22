@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Styles 展示</title>
+    <link rel="stylesheet" href="products.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+        .style-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+        .style-description {
+            font-style: italic;
+            color: #888;
+            display: block;
+            margin-top: 5px;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 900px) {
+            .demo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .placeholder-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 50px; color: #333;">Product Styles 展示頁面</h1>
+
+        <!-- Product Style 1 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 1 - 經典旅遊卡片</span>
+                <span class="style-description">適用：一般行程展示、國內旅遊。特色：乾淨俐落，重點突出價格與目的地。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-1">
+                    <div class="placeholder-image">🏔️ 旅遊圖片</div>
+                    <div class="product-content">
+                        <div class="product-title">台北101觀景台一日遊</div>
+                        <div class="product-price">NT$ 2,999</div>
+                    </div>
+                </div>
+                <div class="product-style-1">
+                    <div class="placeholder-image">🌊 旅遊圖片</div>
+                    <div class="product-content">
+                        <div class="product-title">墾丁陽光海灘三日遊</div>
+                        <div class="product-price">NT$ 8,500</div>
+                    </div>
+                </div>
+                <div class="product-style-1">
+                    <div class="placeholder-image">🏯 旅遊圖片</div>
+                    <div class="product-content">
+                        <div class="product-title">台南古都文化之旅</div>
+                        <div class="product-price">NT$ 3,200</div>
+                    </div>
+                </div>
+                <div class="product-style-1">
+                    <div class="placeholder-image">🌲 旅遊圖片</div>
+                    <div class="product-content">
+                        <div class="product-title">阿里山日出觀賞</div>
+                        <div class="product-price">NT$ 4,800</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 2 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 2 - 海島度假風</span>
+                <span class="style-description">適用：海島旅遊、渡假村、蜜月行程。特色：海洋藍漸層，營造清涼放鬆氛圍。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-2">
+                    <div class="product-content">
+                        <div class="product-tag">🏝️ 熱門海島</div>
+                        <div class="product-title" style="margin-top: 12px;">馬爾地夫水上屋度假</div>
+                    </div>
+                </div>
+                <div class="product-style-2">
+                    <div class="product-content">
+                        <div class="product-tag">🌴 渡假村</div>
+                        <div class="product-title" style="margin-top: 12px;">峇里島豪華Villa之旅</div>
+                    </div>
+                </div>
+                <div class="product-style-2">
+                    <div class="product-content">
+                        <div class="product-tag">🐠 潛水天堂</div>
+                        <div class="product-title" style="margin-top: 12px;">帛琉海洋生態探索</div>
+                    </div>
+                </div>
+                <div class="product-style-2">
+                    <div class="product-content">
+                        <div class="product-tag">🏖️ 沙灘假期</div>
+                        <div class="product-title" style="margin-top: 12px;">沖繩陽光海灘五日</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 3 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 3 - 奢華精品旅遊</span>
+                <span class="style-description">適用：高端旅遊、商務艙、五星飯店。特色：金色點綴，展現尊榮質感。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-3">
+                    <div class="product-content">
+                        <div class="product-badge">✦ LUXURY</div>
+                        <div class="product-title" style="margin-top: 12px;">法國巴黎奢華之旅</div>
+                    </div>
+                </div>
+                <div class="product-style-3">
+                    <div class="product-content">
+                        <div class="product-badge">✦ PREMIUM</div>
+                        <div class="product-title" style="margin-top: 12px;">杜拜七星帆船酒店</div>
+                    </div>
+                </div>
+                <div class="product-style-3">
+                    <div class="product-content">
+                        <div class="product-badge">✦ EXCLUSIVE</div>
+                        <div class="product-title" style="margin-top: 12px;">瑞士阿爾卑斯山莊</div>
+                    </div>
+                </div>
+                <div class="product-style-3">
+                    <div class="product-content">
+                        <div class="product-badge">✦ VIP</div>
+                        <div class="product-title" style="margin-top: 12px;">摩納哥皇家體驗</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 4 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 4 - 自然探索風</span>
+                <span class="style-description">適用：生態旅遊、登山健行、國家公園。特色：大地色系，呈現自然原始感。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-4">
+                    <div class="product-content">
+                        <div class="product-tag">🌿 生態之旅</div>
+                        <div class="product-title" style="margin-top: 12px;">亞馬遜雨林探險</div>
+                        <div class="product-info" style="margin-top: 8px;">📍 巴西 | 7天6夜</div>
+                    </div>
+                </div>
+                <div class="product-style-4">
+                    <div class="product-content">
+                        <div class="product-tag">🏕️ 露營體驗</div>
+                        <div class="product-title" style="margin-top: 12px;">黃石國家公園</div>
+                        <div class="product-info" style="margin-top: 8px;">📍 美國 | 5天4夜</div>
+                    </div>
+                </div>
+                <div class="product-style-4">
+                    <div class="product-content">
+                        <div class="product-tag">🦁 野生動物</div>
+                        <div class="product-title" style="margin-top: 12px;">肯亞動物大遷徙</div>
+                        <div class="product-info" style="margin-top: 8px;">📍 肯亞 | 8天7夜</div>
+                    </div>
+                </div>
+                <div class="product-style-4">
+                    <div class="product-content">
+                        <div class="product-tag">⛰️ 登山健行</div>
+                        <div class="product-title" style="margin-top: 12px;">尼泊爾喜馬拉雅</div>
+                        <div class="product-info" style="margin-top: 8px;">📍 尼泊爾 | 10天9夜</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 5 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 5 - 文化體驗風</span>
+                <span class="style-description">適用：文化之旅、歷史古蹟、藝術展覽。特色：典雅色調，散發人文氣息。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-5">
+                    <div class="product-title">京都古寺巡禮</div>
+                    <div class="product-desc">探訪千年古都，感受日本傳統文化的深厚底蘊。</div>
+                </div>
+                <div class="product-style-5">
+                    <div class="product-title">羅馬競技場之旅</div>
+                    <div class="product-desc">走進古羅馬帝國的輝煌歷史，見證人類文明的偉大。</div>
+                </div>
+                <div class="product-style-5">
+                    <div class="product-title">埃及金字塔探秘</div>
+                    <div class="product-desc">揭開法老王的神秘面紗，探索古埃及的無盡奧秘。</div>
+                </div>
+                <div class="product-style-5">
+                    <div class="product-title">希臘雅典衛城</div>
+                    <div class="product-desc">追溯西方文明的起源，感受古希臘的哲學與藝術。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 6 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 6 - 熱銷推薦款</span>
+                <span class="style-description">適用：熱門行程、限時優惠、搶購活動。特色：醒目標籤動畫，吸引立即點擊。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-6">
+                    <div class="placeholder-image">🔥 超人氣行程</div>
+                    <div class="product-content">
+                        <div class="product-price-original">NT$ 35,000</div>
+                        <div class="product-price-sale">NT$ 28,888</div>
+                    </div>
+                </div>
+                <div class="product-style-6">
+                    <div class="placeholder-image">🔥 超人氣行程</div>
+                    <div class="product-content">
+                        <div class="product-price-original">NT$ 42,000</div>
+                        <div class="product-price-sale">NT$ 33,999</div>
+                    </div>
+                </div>
+                <div class="product-style-6">
+                    <div class="placeholder-image">🔥 超人氣行程</div>
+                    <div class="product-content">
+                        <div class="product-price-original">NT$ 28,500</div>
+                        <div class="product-price-sale">NT$ 22,500</div>
+                    </div>
+                </div>
+                <div class="product-style-6">
+                    <div class="placeholder-image">🔥 超人氣行程</div>
+                    <div class="product-content">
+                        <div class="product-price-original">NT$ 55,000</div>
+                        <div class="product-price-sale">NT$ 45,888</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 7 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 7 - 親子家庭風</span>
+                <span class="style-description">適用：親子旅遊、樂園行程、家庭出遊。特色：柔和圓潤，溫馨活潑感。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-7">
+                    <div class="product-content">
+                        <span class="product-icon">🎡</span>
+                        <div class="product-title" style="display: inline;">東京迪士尼親子遊</div>
+                        <div class="product-tag" style="margin-top: 12px; display: inline-block;">適合3-12歲</div>
+                    </div>
+                </div>
+                <div class="product-style-7">
+                    <div class="product-content">
+                        <span class="product-icon">🎢</span>
+                        <div class="product-title" style="display: inline;">大阪環球影城</div>
+                        <div class="product-tag" style="margin-top: 12px; display: inline-block;">親子首選</div>
+                    </div>
+                </div>
+                <div class="product-style-7">
+                    <div class="product-content">
+                        <span class="product-icon">🐼</span>
+                        <div class="product-title" style="display: inline;">新加坡動物園</div>
+                        <div class="product-tag" style="margin-top: 12px; display: inline-block;">生態教育</div>
+                    </div>
+                </div>
+                <div class="product-style-7">
+                    <div class="product-content">
+                        <span class="product-icon">🎠</span>
+                        <div class="product-title" style="display: inline;">香港海洋公園</div>
+                        <div class="product-tag" style="margin-top: 12px; display: inline-block;">寓教於樂</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 8 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 8 - 極簡現代風</span>
+                <span class="style-description">適用：自由行、機加酒、彈性行程。特色：留白設計，資訊一目了然。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-8">
+                    <div class="product-title">東京自由行 5天4夜</div>
+                    <div class="product-meta">
+                        <span>✈️ 長榮航空</span>
+                        <span>🏨 新宿商務飯店</span>
+                    </div>
+                    <div class="product-price">NT$ 18,900 起</div>
+                </div>
+                <div class="product-style-8">
+                    <div class="product-title">首爾自由行 4天3夜</div>
+                    <div class="product-meta">
+                        <span>✈️ 韓亞航空</span>
+                        <span>🏨 明洞精選飯店</span>
+                    </div>
+                    <div class="product-price">NT$ 14,500 起</div>
+                </div>
+                <div class="product-style-8">
+                    <div class="product-title">曼谷自由行 5天4夜</div>
+                    <div class="product-meta">
+                        <span>✈️ 泰國航空</span>
+                        <span>🏨 暹羅區飯店</span>
+                    </div>
+                    <div class="product-price">NT$ 12,800 起</div>
+                </div>
+                <div class="product-style-8">
+                    <div class="product-title">大阪自由行 5天4夜</div>
+                    <div class="product-meta">
+                        <span>✈️ 日本航空</span>
+                        <span>🏨 難波商務飯店</span>
+                    </div>
+                    <div class="product-price">NT$ 19,500 起</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 9 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 9 - 季節限定風</span>
+                <span class="style-description">適用：賞櫻、賞楓、季節限定行程。特色：浪漫粉色系，營造期間限定感。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-9">
+                    <div class="product-content">
+                        <div class="product-tag">🌸 春季限定</div>
+                        <div class="product-title" style="margin-top: 12px;">京都賞櫻之旅</div>
+                    </div>
+                </div>
+                <div class="product-style-9">
+                    <div class="product-content">
+                        <div class="product-tag">🍁 秋季限定</div>
+                        <div class="product-title" style="margin-top: 12px;">北海道賞楓</div>
+                    </div>
+                </div>
+                <div class="product-style-9">
+                    <div class="product-content">
+                        <div class="product-tag">❄️ 冬季限定</div>
+                        <div class="product-title" style="margin-top: 12px;">合掌村點燈祭</div>
+                    </div>
+                </div>
+                <div class="product-style-9">
+                    <div class="product-content">
+                        <div class="product-tag">🎆 夏季限定</div>
+                        <div class="product-title" style="margin-top: 12px;">日本花火大會</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 10 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 10 - 郵輪旅遊風</span>
+                <span class="style-description">適用：郵輪行程、跳島旅遊、遊船。特色：深藍海洋感，展現航海氣質。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-10">
+                    <div class="product-content">
+                        <div class="product-badge">⚓ 皇家加勒比</div>
+                        <div class="product-title" style="margin-top: 12px;">地中海郵輪假期</div>
+                        <div class="product-desc">暢遊義大利、希臘、克羅埃西亞</div>
+                        <div class="product-price" style="margin-top: 12px;">NT$ 89,900</div>
+                    </div>
+                </div>
+                <div class="product-style-10">
+                    <div class="product-content">
+                        <div class="product-badge">🚢 公主郵輪</div>
+                        <div class="product-title" style="margin-top: 12px;">阿拉斯加冰河之旅</div>
+                        <div class="product-desc">探索壯麗冰川與野生動物</div>
+                        <div class="product-price" style="margin-top: 12px;">NT$ 125,000</div>
+                    </div>
+                </div>
+                <div class="product-style-10">
+                    <div class="product-content">
+                        <div class="product-badge">🛳️ 歌詩達郵輪</div>
+                        <div class="product-title" style="margin-top: 12px;">日本跳島巡航</div>
+                        <div class="product-desc">沖繩、宮古島、石垣島</div>
+                        <div class="product-price" style="margin-top: 12px;">NT$ 45,800</div>
+                    </div>
+                </div>
+                <div class="product-style-10">
+                    <div class="product-content">
+                        <div class="product-badge">⛵ 星夢郵輪</div>
+                        <div class="product-title" style="margin-top: 12px;">東南亞海上假期</div>
+                        <div class="product-desc">新加坡、馬來西亞、泰國</div>
+                        <div class="product-price" style="margin-top: 12px;">NT$ 35,900</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 11 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 11 - 城市探索風</span>
+                <span class="style-description">適用：城市旅遊、都市觀光、購物行程。特色：俐落方正，都會時尚感。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-11">
+                    <div class="product-image-wrapper">
+                        <div class="placeholder-image">🌆 城市景觀</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">紐約曼哈頓探索</div>
+                        <div class="product-location">📍 美國紐約</div>
+                    </div>
+                </div>
+                <div class="product-style-11">
+                    <div class="product-image-wrapper">
+                        <div class="placeholder-image">🗼 城市景觀</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">巴黎時尚購物</div>
+                        <div class="product-location">📍 法國巴黎</div>
+                    </div>
+                </div>
+                <div class="product-style-11">
+                    <div class="product-image-wrapper">
+                        <div class="placeholder-image">🌃 城市景觀</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">倫敦經典之旅</div>
+                        <div class="product-location">📍 英國倫敦</div>
+                    </div>
+                </div>
+                <div class="product-style-11">
+                    <div class="product-image-wrapper">
+                        <div class="placeholder-image">🏙️ 城市景觀</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">香港都會假期</div>
+                        <div class="product-location">📍 香港</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 12 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 12 - 早鳥優惠風</span>
+                <span class="style-description">適用：早鳥預購、提前預訂優惠。特色：倒數計時感，刺激提前預訂。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-12">
+                    <div class="product-content">
+                        <div class="product-title">暑假日本團早鳥</div>
+                        <div class="product-countdown" style="margin-top: 12px;">⏰ 優惠倒數 30 天</div>
+                    </div>
+                </div>
+                <div class="product-style-12">
+                    <div class="product-content">
+                        <div class="product-title">春節歐洲團早鳥</div>
+                        <div class="product-countdown" style="margin-top: 12px;">⏰ 優惠倒數 45 天</div>
+                    </div>
+                </div>
+                <div class="product-style-12">
+                    <div class="product-content">
+                        <div class="product-title">賞櫻季早鳥預購</div>
+                        <div class="product-countdown" style="margin-top: 12px;">⏰ 優惠倒數 60 天</div>
+                    </div>
+                </div>
+                <div class="product-style-12">
+                    <div class="product-content">
+                        <div class="product-title">跨年澳洲團早鳥</div>
+                        <div class="product-countdown" style="margin-top: 12px;">⏰ 優惠倒數 90 天</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 13 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 13 - 團體旅遊風</span>
+                <span class="style-description">適用：團體行程、公司旅遊、員工旅遊。特色：可靠穩重，強調服務完整性。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-13">
+                    <div class="product-header">
+                        <div class="product-title">北海道經典五日</div>
+                    </div>
+                    <div class="product-features">
+                        <span class="product-feature included">含機票</span>
+                        <span class="product-feature included">含住宿</span>
+                        <span class="product-feature included">含餐食</span>
+                        <span class="product-feature">專業領隊</span>
+                    </div>
+                </div>
+                <div class="product-style-13">
+                    <div class="product-header">
+                        <div class="product-title">韓國首爾四日</div>
+                    </div>
+                    <div class="product-features">
+                        <span class="product-feature included">含機票</span>
+                        <span class="product-feature included">含住宿</span>
+                        <span class="product-feature included">含早餐</span>
+                        <span class="product-feature">中文導遊</span>
+                    </div>
+                </div>
+                <div class="product-style-13">
+                    <div class="product-header">
+                        <div class="product-title">泰國曼谷五日</div>
+                    </div>
+                    <div class="product-features">
+                        <span class="product-feature included">含機票</span>
+                        <span class="product-feature included">五星飯店</span>
+                        <span class="product-feature included">全程餐食</span>
+                        <span class="product-feature">按摩體驗</span>
+                    </div>
+                </div>
+                <div class="product-style-13">
+                    <div class="product-header">
+                        <div class="product-title">越南胡志明五日</div>
+                    </div>
+                    <div class="product-features">
+                        <span class="product-feature included">含機票</span>
+                        <span class="product-feature included">含住宿</span>
+                        <span class="product-feature included">含簽證</span>
+                        <span class="product-feature">當地美食</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 14 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 14 - 浪漫蜜月風</span>
+                <span class="style-description">適用：蜜月旅行、情人節、週年慶。特色：柔美浪漫，營造甜蜜氛圍。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-14">
+                    <div class="product-content">
+                        <div class="product-badge">💕 蜜月首選</div>
+                        <div class="product-title" style="margin-top: 12px;">聖托里尼浪漫假期</div>
+                        <div class="product-subtitle">愛琴海藍白世界</div>
+                    </div>
+                </div>
+                <div class="product-style-14">
+                    <div class="product-content">
+                        <div class="product-badge">💍 週年慶典</div>
+                        <div class="product-title" style="margin-top: 12px;">巴黎浪漫之都</div>
+                        <div class="product-subtitle">艾菲爾鐵塔下的誓言</div>
+                    </div>
+                </div>
+                <div class="product-style-14">
+                    <div class="product-content">
+                        <div class="product-badge">🌹 情人節限定</div>
+                        <div class="product-title" style="margin-top: 12px;">威尼斯貢多拉</div>
+                        <div class="product-subtitle">水都的浪漫邂逅</div>
+                    </div>
+                </div>
+                <div class="product-style-14">
+                    <div class="product-content">
+                        <div class="product-badge">💞 蜜月推薦</div>
+                        <div class="product-title" style="margin-top: 12px;">布拉格童話之旅</div>
+                        <div class="product-subtitle">中歐最美的城市</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Style 15 -->
+        <div class="section">
+            <p class="section-title">
+                <span class="style-name">Product Style 15 - 互動探索風</span>
+                <span class="style-description">適用：體驗活動、一日遊、特色行程。特色：卡片翻轉效果，增加互動趣味。</span>
+            </p>
+            <div class="demo-grid">
+                <div class="product-style-15">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="product-title">九份老街半日遊</div>
+                            <div class="product-hint">滑鼠移入查看詳情 →</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="product-title">行程內容</div>
+                            <div class="product-desc">探訪懷舊山城，品嚐芋圓、草仔粿等在地美食，欣賞山海美景。</div>
+                            <div class="product-cta">立即預訂</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-style-15">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="product-title">淡水夕陽之旅</div>
+                            <div class="product-hint">滑鼠移入查看詳情 →</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="product-title">行程內容</div>
+                            <div class="product-desc">漫步河岸老街，品嚐阿給、魚酥，欣賞最美夕陽。</div>
+                            <div class="product-cta">立即預訂</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-style-15">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="product-title">野柳地質探險</div>
+                            <div class="product-hint">滑鼠移入查看詳情 →</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="product-title">行程內容</div>
+                            <div class="product-desc">欣賞女王頭等奇岩怪石，體驗大自然的鬼斧神工。</div>
+                            <div class="product-cta">立即預訂</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-style-15">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="product-title">平溪天燈體驗</div>
+                            <div class="product-hint">滑鼠移入查看詳情 →</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="product-title">行程內容</div>
+                            <div class="product-desc">親手施放天燈，許下美好心願，感受傳統文化魅力。</div>
+                            <div class="product-cta">立即預訂</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #999; font-size: 12px;">
+            <p>Product Styles Demo - 滑鼠移至各區塊可查看 hover 效果</p>
+        </footer>
+    </div>
+</body>
+</html>
