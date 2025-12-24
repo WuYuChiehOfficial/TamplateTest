@@ -1,0 +1,964 @@
+/* Travel Industry CSS Styles */
+/* 旅遊業專用樣式設計 - RWD 響應式設計 */
+/* 注意：此檔案獨立於 text.css，使用 travel- 前綴避免衝突 */
+
+/* ============================================
+   共用設定
+   ============================================ */
+[class^="travel-"] {
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+}
+
+/* ============================================
+   一、行程呈現樣式 (Itinerary Styles)
+   ============================================ */
+
+/* 行程樣式 1 - 經典時間軸 */
+.travel-itinerary-1 {
+    position: relative;
+    padding: clamp(15px, 3vw, 25px);
+    padding-left: clamp(40px, 6vw, 60px);
+    border-left: 3px solid #0066cc;
+    margin: clamp(10px, 2vw, 20px) 0;
+    background: linear-gradient(to right, #f8f9fa 0%, #ffffff 100%);
+    transition: all 0.3s ease;
+}
+.travel-itinerary-1::before {
+    content: attr(data-day);
+    position: absolute;
+    left: -15px;
+    top: clamp(12px, 2vw, 20px);
+    width: 30px;
+    height: 30px;
+    background: #0066cc;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.travel-itinerary-1:hover {
+    background: linear-gradient(to right, #e9ecef 0%, #f8f9fa 100%);
+    transform: translateX(5px);
+}
+
+/* 行程樣式 2 - 卡片式 */
+.travel-itinerary-2 {
+    padding: clamp(15px, 3vw, 25px);
+    margin: clamp(10px, 2vw, 15px) 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #28a745;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-2:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+/* 行程樣式 3 - 手風琴式 */
+.travel-itinerary-3 {
+    padding: clamp(12px, 2.5vw, 20px);
+    margin: clamp(5px, 1vw, 8px) 0;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-3::after {
+    content: '▼';
+    float: right;
+    color: #6c757d;
+    transition: transform 0.3s;
+}
+.travel-itinerary-3:hover {
+    background: #f8f9fa;
+    border-color: #0066cc;
+}
+.travel-itinerary-3.active::after {
+    transform: rotate(180deg);
+}
+
+/* 行程樣式 4 - 步驟式 */
+.travel-itinerary-4 {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 20px);
+    padding: clamp(15px, 3vw, 25px);
+    margin: clamp(8px, 1.5vw, 12px) 0;
+    background: #ffffff;
+    border-radius: 10px;
+    border-left: 5px solid #ff6b35;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-4:hover {
+    background: #fff8f5;
+    padding-left: clamp(20px, 4vw, 35px);
+}
+
+/* 行程樣式 5 - 地圖標記式 */
+.travel-itinerary-5 {
+    position: relative;
+    padding: clamp(15px, 3vw, 25px);
+    padding-left: clamp(50px, 8vw, 70px);
+    margin: clamp(10px, 2vw, 15px) 0;
+    background: #f0f7ff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-5::before {
+    content: '📍';
+    position: absolute;
+    left: clamp(12px, 2vw, 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(20px, 4vw, 28px);
+}
+.travel-itinerary-5:hover {
+    background: #e3f0ff;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+}
+
+/* 行程樣式 6 - 航班式 */
+.travel-itinerary-6 {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+    padding: clamp(15px, 3vw, 20px);
+    margin: clamp(8px, 1.5vw, 12px) 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-6:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* 行程樣式 7 - 日出日落式 */
+.travel-itinerary-7 {
+    padding: clamp(15px, 3vw, 25px);
+    margin: clamp(10px, 2vw, 15px) 0;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.travel-itinerary-7::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+.travel-itinerary-7:hover {
+    box-shadow: 0 8px 25px rgba(252, 182, 159, 0.5);
+}
+
+/* ============================================
+   二、標題設計樣式 (Heading Styles)
+   ============================================ */
+
+/* 標題樣式 1 - 經典底線 */
+.travel-heading-1 {
+    font-size: clamp(20px, 4vw, 28px);
+    color: #2c3e50;
+    padding-bottom: clamp(8px, 1.5vw, 12px);
+    margin: clamp(15px, 3vw, 25px) 0;
+    border-bottom: 3px solid #0066cc;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.travel-heading-1:hover {
+    color: #0066cc;
+}
+
+/* 標題樣式 2 - 左側裝飾 */
+.travel-heading-2 {
+    font-size: clamp(18px, 3.5vw, 26px);
+    color: #1a1a2e;
+    padding-left: clamp(15px, 2.5vw, 25px);
+    margin: clamp(12px, 2.5vw, 20px) 0;
+    border-left: 5px solid #28a745;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.travel-heading-2:hover {
+    padding-left: clamp(20px, 3vw, 30px);
+    background: linear-gradient(to right, rgba(40, 167, 69, 0.1), transparent);
+}
+
+/* 標題樣式 3 - 漸層背景 */
+.travel-heading-3 {
+    font-size: clamp(18px, 3.5vw, 24px);
+    color: #fff;
+    padding: clamp(12px, 2vw, 18px) clamp(20px, 3vw, 30px);
+    margin: clamp(15px, 3vw, 25px) 0;
+    background: linear-gradient(135deg, #0066cc 0%, #00a8e8 100%);
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.travel-heading-3:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+/* 標題樣式 4 - 標籤式 */
+.travel-heading-4 {
+    font-size: clamp(16px, 3vw, 22px);
+    color: #495057;
+    padding: clamp(10px, 1.5vw, 15px) clamp(15px, 2.5vw, 25px);
+    margin: clamp(10px, 2vw, 18px) 0;
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.travel-heading-4:hover {
+    background: #0066cc;
+    color: #fff;
+    border-color: #0066cc;
+}
+
+/* 標題樣式 5 - 雙線裝飾 */
+.travel-heading-5 {
+    font-size: clamp(18px, 3.5vw, 26px);
+    color: #2c3e50;
+    text-align: center;
+    padding: clamp(10px, 2vw, 15px) 0;
+    margin: clamp(20px, 4vw, 35px) 0;
+    font-weight: 700;
+    position: relative;
+}
+.travel-heading-5::before,
+.travel-heading-5::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #0066cc);
+}
+.travel-heading-5::before {
+    left: 5%;
+}
+.travel-heading-5::after {
+    right: 5%;
+    background: linear-gradient(to left, transparent, #0066cc);
+}
+
+/* 標題樣式 6 - 圖標式 */
+.travel-heading-6 {
+    font-size: clamp(18px, 3.5vw, 24px);
+    color: #2c3e50;
+    padding: clamp(10px, 2vw, 15px);
+    padding-left: clamp(45px, 7vw, 60px);
+    margin: clamp(12px, 2.5vw, 20px) 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.travel-heading-6::before {
+    content: '✈️';
+    position: absolute;
+    left: clamp(10px, 2vw, 18px);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(20px, 3.5vw, 26px);
+}
+.travel-heading-6:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 標題樣式 7 - 霓虹邊框 */
+.travel-heading-7 {
+    font-size: clamp(18px, 3.5vw, 26px);
+    color: #1a1a2e;
+    padding: clamp(12px, 2vw, 18px) clamp(20px, 3vw, 30px);
+    margin: clamp(15px, 3vw, 25px) 0;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition: all 0.3s ease;
+}
+.travel-heading-7:hover {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+/* 標題樣式 8 - 角落裝飾 */
+.travel-heading-8 {
+    font-size: clamp(18px, 3.5vw, 24px);
+    color: #2c3e50;
+    padding: clamp(15px, 2.5vw, 22px);
+    margin: clamp(15px, 3vw, 25px) 0;
+    background: #f8f9fa;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.travel-heading-8::before,
+.travel-heading-8::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ff6b35;
+}
+.travel-heading-8::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+.travel-heading-8::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+.travel-heading-8:hover {
+    background: #fff;
+}
+
+/* ============================================
+   三、頁籤樣式 (Tab Styles)
+   ============================================ */
+
+/* 頁籤樣式 1 - 經典底線 */
+.travel-tabs-1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(3px, 0.5vw, 5px);
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0;
+    margin: clamp(15px, 3vw, 25px) 0;
+}
+.travel-tabs-1 .tab-item {
+    padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 25px);
+    color: #495057;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.travel-tabs-1 .tab-item:hover,
+.travel-tabs-1 .tab-item.active {
+    color: #0066cc;
+    border-bottom-color: #0066cc;
+}
+
+/* 頁籤樣式 2 - 圓角按鈕 */
+.travel-tabs-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(8px, 1.5vw, 12px);
+    margin: clamp(15px, 3vw, 25px) 0;
+}
+.travel-tabs-2 .tab-item {
+    padding: clamp(8px, 1.5vw, 12px) clamp(18px, 3vw, 28px);
+    color: #495057;
+    background: #f8f9fa;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.travel-tabs-2 .tab-item:hover {
+    background: #e9ecef;
+}
+.travel-tabs-2 .tab-item.active {
+    background: #0066cc;
+    color: #fff;
+}
+
+/* 頁籤樣式 3 - 方形卡片 */
+.travel-tabs-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(5px, 1vw, 10px);
+    margin: clamp(15px, 3vw, 25px) 0;
+}
+.travel-tabs-3 .tab-item {
+    padding: clamp(12px, 2vw, 18px) clamp(20px, 3.5vw, 30px);
+    color: #495057;
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.travel-tabs-3 .tab-item:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+}
+.travel-tabs-3 .tab-item.active {
+    background: #0066cc;
+    border-color: #0066cc;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* 頁籤樣式 4 - 垂直標籤 */
+.travel-tabs-4 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 0.5vw, 5px);
+    margin: clamp(15px, 3vw, 25px) 0;
+    max-width: 280px;
+}
+.travel-tabs-4 .tab-item {
+    padding: clamp(12px, 2vw, 16px) clamp(18px, 3vw, 25px);
+    color: #495057;
+    background: #f8f9fa;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.travel-tabs-4 .tab-item:hover {
+    background: #e9ecef;
+    border-left-color: #adb5bd;
+}
+.travel-tabs-4 .tab-item.active {
+    background: #e7f1ff;
+    border-left-color: #0066cc;
+    color: #0066cc;
+}
+
+/* 頁籤樣式 5 - 膠囊式 */
+.travel-tabs-5 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: clamp(15px, 3vw, 25px) 0;
+    background: #f8f9fa;
+    border-radius: 50px;
+    padding: 4px;
+}
+.travel-tabs-5 .tab-item {
+    padding: clamp(8px, 1.5vw, 12px) clamp(18px, 3vw, 28px);
+    color: #495057;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.travel-tabs-5 .tab-item:hover {
+    color: #0066cc;
+}
+.travel-tabs-5 .tab-item.active {
+    background: #fff;
+    color: #0066cc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 頁籤樣式 6 - 漸層背景 */
+.travel-tabs-6 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(8px, 1.5vw, 12px);
+    margin: clamp(15px, 3vw, 25px) 0;
+}
+.travel-tabs-6 .tab-item {
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3.5vw, 30px);
+    color: #495057;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.travel-tabs-6 .tab-item:hover {
+    transform: translateY(-2px);
+}
+.travel-tabs-6 .tab-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 頁籤樣式 7 - 圖標導航 */
+.travel-tabs-7 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 25px);
+    margin: clamp(20px, 4vw, 35px) 0;
+}
+.travel-tabs-7 .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: clamp(15px, 2.5vw, 22px);
+    color: #6c757d;
+    background: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    min-width: clamp(80px, 15vw, 120px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+.travel-tabs-7 .tab-item .icon {
+    font-size: clamp(24px, 4vw, 32px);
+}
+.travel-tabs-7 .tab-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.travel-tabs-7 .tab-item.active {
+    color: #0066cc;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+}
+
+/* ============================================
+   四、圖片大小控制樣式 (Image Styles)
+   ============================================ */
+
+/* 圖片樣式 1 - 基礎響應式 */
+.travel-img-1 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+.travel-img-1:hover {
+    transform: scale(1.02);
+}
+
+/* 圖片樣式 2 - 固定比例 16:9 */
+.travel-img-2-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.travel-img-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+.travel-img-2-wrapper:hover .travel-img-2 {
+    transform: scale(1.1);
+}
+
+/* 圖片樣式 3 - 圓形頭像 */
+.travel-img-3 {
+    width: clamp(80px, 15vw, 150px);
+    height: clamp(80px, 15vw, 150px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+.travel-img-3:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 圖片樣式 4 - 卡片縮圖 */
+.travel-img-4 {
+    width: 100%;
+    height: clamp(150px, 25vw, 220px);
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    transition: all 0.3s ease;
+}
+.travel-img-4:hover {
+    filter: brightness(1.05);
+}
+
+/* 圖片樣式 5 - 畫廊圖片 */
+.travel-img-5-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.travel-img-5 {
+    width: 100%;
+    height: clamp(180px, 30vw, 280px);
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+.travel-img-5-wrapper::after {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 40px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.travel-img-5-wrapper:hover .travel-img-5 {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+.travel-img-5-wrapper:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* 圖片樣式 6 - 橫幅Banner */
+.travel-img-6 {
+    width: 100%;
+    height: clamp(200px, 40vw, 400px);
+    object-fit: cover;
+    border-radius: 0;
+    transition: all 0.5s ease;
+}
+.travel-img-6:hover {
+    filter: brightness(1.1) saturate(1.1);
+}
+
+/* 圖片樣式 7 - 網格圖片 */
+.travel-img-7-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 20vw, 200px), 1fr));
+    gap: clamp(8px, 1.5vw, 15px);
+}
+.travel-img-7 {
+    width: 100%;
+    height: clamp(100px, 18vw, 160px);
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.travel-img-7:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 圖片樣式 8 - 疊加文字 */
+.travel-img-8-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.travel-img-8 {
+    width: 100%;
+    height: clamp(200px, 35vw, 300px);
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+.travel-img-8-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: clamp(15px, 3vw, 25px);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.travel-img-8-wrapper:hover .travel-img-8 {
+    transform: scale(1.08);
+}
+
+/* ============================================
+   五、說明文字樣式 (Description Styles)
+   ============================================ */
+
+/* 說明樣式 1 - 基礎說明 */
+.travel-desc-1 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #495057;
+    line-height: 1.8;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(12px, 2vw, 18px);
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.travel-desc-1:hover {
+    background: #e9ecef;
+}
+
+/* 說明樣式 2 - 引用式 */
+.travel-desc-2 {
+    font-size: clamp(15px, 2.8vw, 18px);
+    color: #495057;
+    line-height: 1.9;
+    margin: clamp(15px, 3vw, 25px) 0;
+    padding: clamp(15px, 2.5vw, 22px);
+    padding-left: clamp(25px, 4vw, 35px);
+    background: #fff;
+    border-left: 4px solid #0066cc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+.travel-desc-2:hover {
+    border-left-width: 6px;
+}
+
+/* 說明樣式 3 - 資訊卡 */
+.travel-desc-3 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #155724;
+    line-height: 1.7;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(12px, 2vw, 18px);
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.travel-desc-3::before {
+    content: 'ℹ️ ';
+}
+.travel-desc-3:hover {
+    background: #c3e6cb;
+}
+
+/* 說明樣式 4 - 提醒框 */
+.travel-desc-4 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #856404;
+    line-height: 1.7;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(12px, 2vw, 18px);
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+.travel-desc-4::before {
+    content: '⚠️ 注意：';
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.travel-desc-4:hover {
+    background: #ffeeba;
+}
+
+/* 說明樣式 5 - 費用說明 */
+.travel-desc-5 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #383d41;
+    line-height: 1.8;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(15px, 2.5vw, 22px);
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    border-radius: 12px;
+    border: 1px solid #d6d8db;
+    transition: all 0.3s ease;
+}
+.travel-desc-5 .price {
+    font-size: clamp(22px, 4vw, 30px);
+    color: #dc3545;
+    font-weight: 700;
+}
+.travel-desc-5:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 說明樣式 6 - 特色標籤列表 */
+.travel-desc-6 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #495057;
+    line-height: 2;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(12px, 2vw, 18px);
+}
+.travel-desc-6 .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 4px;
+    background: #e7f1ff;
+    color: #0066cc;
+    border-radius: 20px;
+    font-size: clamp(12px, 2vw, 14px);
+    transition: all 0.3s ease;
+}
+.travel-desc-6 .tag:hover {
+    background: #0066cc;
+    color: #fff;
+}
+
+/* 說明樣式 7 - 時間表式 */
+.travel-desc-7 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #495057;
+    line-height: 1.8;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(12px, 2vw, 18px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.travel-desc-7 .time-item {
+    display: flex;
+    gap: clamp(10px, 2vw, 15px);
+    padding: clamp(8px, 1.5vw, 12px) 0;
+    border-bottom: 1px dashed #dee2e6;
+}
+.travel-desc-7 .time-item:last-child {
+    border-bottom: none;
+}
+.travel-desc-7 .time-label {
+    min-width: clamp(60px, 12vw, 80px);
+    color: #0066cc;
+    font-weight: 600;
+}
+
+/* 說明樣式 8 - 包含清單 */
+.travel-desc-8 {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #495057;
+    line-height: 2;
+    margin: clamp(10px, 2vw, 15px) 0;
+    padding: clamp(15px, 2.5vw, 22px);
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+}
+.travel-desc-8 .include-item {
+    position: relative;
+    padding-left: clamp(25px, 4vw, 30px);
+    margin: clamp(6px, 1vw, 10px) 0;
+}
+.travel-desc-8 .include-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+.travel-desc-8 .exclude-item {
+    position: relative;
+    padding-left: clamp(25px, 4vw, 30px);
+    margin: clamp(6px, 1vw, 10px) 0;
+    color: #6c757d;
+}
+.travel-desc-8 .exclude-item::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* ============================================
+   響應式斷點設計
+   ============================================ */
+
+/* 平板裝置 (max-width: 768px) */
+@media (max-width: 768px) {
+    /* 頁籤調整 */
+    .travel-tabs-4 {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .travel-tabs-7 .tab-item {
+        min-width: clamp(70px, 20vw, 100px);
+    }
+    
+    /* 圖片網格調整 */
+    .travel-img-7-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 行程調整 */
+    .travel-itinerary-6 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* 手機裝置 (max-width: 480px) */
+@media (max-width: 480px) {
+    /* 頁籤調整 */
+    .travel-tabs-1,
+    .travel-tabs-2,
+    .travel-tabs-3,
+    .travel-tabs-6 {
+        flex-direction: column;
+    }
+    
+    .travel-tabs-5 {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+    
+    .travel-tabs-5 .tab-item {
+        border-radius: 8px;
+    }
+    
+    .travel-tabs-7 {
+        gap: clamp(10px, 2vw, 15px);
+    }
+    
+    /* 行程調整 */
+    .travel-itinerary-1 {
+        padding-left: clamp(35px, 5vw, 45px);
+    }
+    
+    .travel-itinerary-4 {
+        flex-direction: column;
+    }
+    
+    /* 標題調整 */
+    .travel-heading-5::before,
+    .travel-heading-5::after {
+        width: 15%;
+    }
+    
+    /* 圖片調整 */
+    .travel-img-7-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    /* 說明文字調整 */
+    .travel-desc-7 .time-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* 大螢幕裝置 (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .travel-img-7-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

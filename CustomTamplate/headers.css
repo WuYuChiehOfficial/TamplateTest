@@ -25,7 +25,7 @@
 /* Header Style 2 */
 /* 漸層背景設計，展現活力與動感。 */
 .header-style-2 {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #6a11cb, #945fcc);
     color: white;
     font-size: clamp(20px, 4.5vw, 28px);
     padding: clamp(10px, 2.5vw, 15px);

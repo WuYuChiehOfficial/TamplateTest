@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊業 CSS 樣式展示</title>
+    <link rel="stylesheet" href="travel.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .page-title {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 42px);
+            color: #0066cc;
+            margin: 40px 0;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0066cc;
+        }
+        .section {
+            background: #fff;
+            margin: 30px 0;
+            padding: clamp(20px, 4vw, 40px);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .section-title {
+            font-size: clamp(22px, 4vw, 30px);
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            font-size: 28px;
+        }
+        .demo-block {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafbfc;
+            border-radius: 10px;
+            border: 1px dashed #dee2e6;
+        }
+        .demo-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 15px;
+            font-weight: 600;
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .demo-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .demo-col {
+            flex: 1;
+            min-width: 280px;
+        }
+        .nav-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            max-width: 200px;
+        }
+        .nav-fixed a {
+            display: block;
+            padding: 8px 12px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .nav-fixed a:hover {
+            background: #0066cc;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .nav-fixed {
+                display: none;
+            }
+        }
+        .sample-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 快速導航 -->
+    <nav class="nav-fixed">
+        <a href="#section-itinerary">📅 行程呈現</a>
+        <a href="#section-heading">📝 標題設計</a>
+        <a href="#section-tabs">📑 頁籤樣式</a>
+        <a href="#section-images">🖼️ 圖片控制</a>
+        <a href="#section-desc">📄 說明文字</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">🌏 旅遊業 CSS 樣式展示</h1>
+
+        <!-- ============================================
+             一、行程呈現樣式
+             ============================================ -->
+        <section class="section" id="section-itinerary">
+            <h2 class="section-title">📅 一、行程呈現樣式 (Itinerary Styles)</h2>
+
+            <!-- 行程樣式 1 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 1 - 經典時間軸</div>
+                <div class="travel-itinerary-1" data-day="1">
+                    <strong>第一天：台北 → 東京成田機場</strong><br>
+                    搭乘豪華客機飛往日本東京，抵達後前往酒店休息，為明天精彩行程做準備。
+                </div>
+                <div class="travel-itinerary-1" data-day="2">
+                    <strong>第二天：淺草寺 → 晴空塔 → 銀座購物</strong><br>
+                    早餐後前往著名的淺草寺參觀，體驗日本傳統文化，隨後登上晴空塔俯瞰東京全景。
+                </div>
+            </div>
+
+            <!-- 行程樣式 2 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 2 - 卡片式</div>
+                <div class="travel-itinerary-2">
+                    <strong>🏨 Day 1 - 抵達巴黎</strong><br>
+                    搭乘國際航班抵達巴黎戴高樂機場，專車接送至市中心五星級酒店。晚間可自由探索香榭麗舍大道。
+                </div>
+                <div class="travel-itinerary-2">
+                    <strong>🗼 Day 2 - 艾菲爾鐵塔 & 羅浮宮</strong><br>
+                    上午參觀世界知名的艾菲爾鐵塔，下午前往羅浮宮欣賞蒙娜麗莎等世界名畫。
+                </div>
+            </div>
+
+            <!-- 行程樣式 3 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 3 - 手風琴式（可展開）</div>
+                <div class="travel-itinerary-3">
+                    <strong>Day 1</strong> - 台北松山機場 → 沖繩那霸機場 → 國際通自由購物
+                </div>
+                <div class="travel-itinerary-3">
+                    <strong>Day 2</strong> - 美麗海水族館 → 古宇利島 → 萬座毛
+                </div>
+                <div class="travel-itinerary-3">
+                    <strong>Day 3</strong> - 首里城公園 → 沖繩Outlet購物 → 返回台北
+                </div>
+            </div>
+
+            <!-- 行程樣式 4 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 4 - 步驟式</div>
+                <div class="travel-itinerary-4">
+                    <span style="font-size: 24px;">🛫</span>
+                    <div>
+                        <strong>出發</strong><br>
+                        早上 08:00 於桃園國際機場第二航廈集合，辦理登機手續。
+                    </div>
+                </div>
+                <div class="travel-itinerary-4">
+                    <span style="font-size: 24px;">🏰</span>
+                    <div>
+                        <strong>景點參觀</strong><br>
+                        抵達後前往迪士尼樂園，享受一整天的歡樂時光。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行程樣式 5 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 5 - 地圖標記式</div>
+                <div class="travel-itinerary-5">
+                    <strong>新宿御苑</strong> - 日本最美的賞櫻名所之一，佔地約 58 公頃的廣大庭園。
+                </div>
+                <div class="travel-itinerary-5">
+                    <strong>明治神宮</strong> - 東京都心的神聖森林，感受日本傳統神社文化。
+                </div>
+            </div>
+
+            <!-- 行程樣式 6 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 6 - 航班式</div>
+                <div class="travel-itinerary-6">
+                    <div>
+                        <strong>TPE</strong><br>
+                        <small>台北桃園</small><br>
+                        08:30
+                    </div>
+                    <div style="text-align: center;">
+                        ✈️ CI100 約 2小時30分
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>NRT</strong><br>
+                        <small>東京成田</small><br>
+                        12:45
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行程樣式 7 -->
+            <div class="demo-block">
+                <div class="demo-label">樣式 7 - 日出日落式</div>
+                <div class="travel-itinerary-7">
+                    <strong>🌅 清晨行程</strong><br>
+                    05:30 起床，前往阿里山觀日出，欣賞雲海翻騰的壯麗景色，感受大自然的奇幻魅力。
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             二、標題設計樣式
+             ============================================ -->
+        <section class="section" id="section-heading">
+            <h2 class="section-title">📝 二、標題設計樣式 (Heading Styles)</h2>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 1 - 經典底線</div>
+                <h3 class="travel-heading-1">日本東京五日遊</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 2 - 左側裝飾</div>
+                <h3 class="travel-heading-2">行程特色介紹</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 3 - 漸層背景</div>
+                <h3 class="travel-heading-3">熱門精選行程</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 4 - 標籤式</div>
+                <h3 class="travel-heading-4">限時優惠</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 5 - 雙線裝飾</div>
+                <h3 class="travel-heading-5">精選住宿推薦</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 6 - 圖標式</div>
+                <h3 class="travel-heading-6">航班資訊</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 7 - 霓虹邊框</div>
+                <h3 class="travel-heading-7">豪華郵輪假期</h3>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 8 - 角落裝飾</div>
+                <h3 class="travel-heading-8">費用說明與須知</h3>
+            </div>
+        </section>
+
+        <!-- ============================================
+             三、頁籤樣式
+             ============================================ -->
+        <section class="section" id="section-tabs">
+            <h2 class="section-title">📑 三、頁籤樣式 (Tab Styles)</h2>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 1 - 經典底線</div>
+                <div class="travel-tabs-1">
+                    <div class="tab-item active">行程介紹</div>
+                    <div class="tab-item">航班資訊</div>
+                    <div class="tab-item">住宿安排</div>
+                    <div class="tab-item">費用說明</div>
+                    <div class="tab-item">注意事項</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 2 - 圓角按鈕</div>
+                <div class="travel-tabs-2">
+                    <div class="tab-item active">全部行程</div>
+                    <div class="tab-item">日本</div>
+                    <div class="tab-item">韓國</div>
+                    <div class="tab-item">東南亞</div>
+                    <div class="tab-item">歐美</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 3 - 方形卡片</div>
+                <div class="travel-tabs-3">
+                    <div class="tab-item active">跟團旅遊</div>
+                    <div class="tab-item">自由行</div>
+                    <div class="tab-item">機+酒</div>
+                    <div class="tab-item">主題旅遊</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 4 - 垂直標籤</div>
+                <div class="travel-tabs-4">
+                    <div class="tab-item active">Day 1</div>
+                    <div class="tab-item">Day 2</div>
+                    <div class="tab-item">Day 3</div>
+                    <div class="tab-item">Day 4</div>
+                    <div class="tab-item">Day 5</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 5 - 膠囊式</div>
+                <div class="travel-tabs-5">
+                    <div class="tab-item active">精選行程</div>
+                    <div class="tab-item">早鳥優惠</div>
+                    <div class="tab-item">最新上架</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 6 - 漸層背景</div>
+                <div class="travel-tabs-6">
+                    <div class="tab-item active">5天4夜</div>
+                    <div class="tab-item">7天6夜</div>
+                    <div class="tab-item">10天9夜</div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 7 - 圖標導航</div>
+                <div class="travel-tabs-7">
+                    <div class="tab-item active">
+                        <span class="icon">✈️</span>
+                        <span>航班</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="icon">🏨</span>
+                        <span>住宿</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="icon">🚌</span>
+                        <span>交通</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="icon">🍽️</span>
+                        <span>餐食</span>
+                    </div>
+                    <div class="tab-item">
+                        <span class="icon">🎫</span>
+                        <span>門票</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             四、圖片大小控制樣式
+             ============================================ -->
+        <section class="section" id="section-images">
+            <h2 class="section-title">🖼️ 四、圖片大小控制樣式 (Image Styles)</h2>
+
+            <div class="demo-row">
+                <div class="demo-col">
+                    <div class="demo-block">
+                        <div class="demo-label">樣式 1 - 基礎響應式</div>
+                        <img class="travel-img-1 sample-image" 
+                             src="https://picsum.photos/400/250?random=1" 
+                             alt="旅遊風景"
+                             onerror="this.style.height='150px';this.innerHTML='🏞️ 範例圖片';">
+                    </div>
+                </div>
+                <div class="demo-col">
+                    <div class="demo-block">
+                        <div class="demo-label">樣式 2 - 固定比例 16:9</div>
+                        <div class="travel-img-2-wrapper">
+                            <img class="travel-img-2 sample-image" 
+                                 src="https://picsum.photos/400/225?random=2" 
+                                 alt="旅遊風景"
+                                 onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';this.style.display='flex';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 3 - 圓形頭像（適合導遊/團友照片）</div>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <img class="travel-img-3 sample-image" 
+                         src="https://picsum.photos/150/150?random=3" 
+                         alt="導遊頭像"
+                         style="display: flex; align-items: center; justify-content: center;"
+                         onerror="this.innerHTML='👤';">
+                    <img class="travel-img-3 sample-image" 
+                         src="https://picsum.photos/150/150?random=4" 
+                         alt="導遊頭像"
+                         onerror="this.style.background='linear-gradient(135deg, #28a745 0%, #20c997 100%)';">
+                    <img class="travel-img-3 sample-image" 
+                         src="https://picsum.photos/150/150?random=5" 
+                         alt="導遊頭像"
+                         onerror="this.style.background='linear-gradient(135deg, #ffc107 0%, #ff6b35 100%)';">
+                </div>
+            </div>
+
+            <div class="demo-row">
+                <div class="demo-col">
+                    <div class="demo-block">
+                        <div class="demo-label">樣式 4 - 卡片縮圖</div>
+                        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;">
+                            <img class="travel-img-4 sample-image" 
+                                 src="https://picsum.photos/400/200?random=6" 
+                                 alt="行程縮圖"
+                                 style="display: flex; align-items: center; justify-content: center;"
+                                 onerror="this.innerHTML='🗾 日本東京';">
+                            <div style="padding: 15px;">
+                                <h4>日本東京五日遊</h4>
+                                <p style="color: #6c757d;">暢遊東京迪士尼、淺草寺、晴空塔</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-col">
+                    <div class="demo-block">
+                        <div class="demo-label">樣式 5 - 畫廊圖片（hover 放大鏡效果）</div>
+                        <div class="travel-img-5-wrapper">
+                            <img class="travel-img-5 sample-image" 
+                                 src="https://picsum.photos/400/280?random=7" 
+                                 alt="畫廊圖片"
+                                 style="display: flex; align-items: center; justify-content: center;"
+                                 onerror="this.innerHTML='🏯 京都古寺';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 6 - 橫幅 Banner</div>
+                <img class="travel-img-6 sample-image" 
+                     src="https://picsum.photos/1200/400?random=8" 
+                     alt="橫幅Banner"
+                     style="display: flex; align-items: center; justify-content: center; font-size: 32px;"
+                     onerror="this.innerHTML='🌸 春季賞櫻特輯 - 日本關西五日遊';">
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 7 - 網格圖片</div>
+                <div class="travel-img-7-grid">
+                    <img class="travel-img-7 sample-image" src="https://picsum.photos/200/160?random=9" alt="景點1" onerror="this.innerHTML='🗼';" style="display: flex; align-items: center; justify-content: center;">
+                    <img class="travel-img-7 sample-image" src="https://picsum.photos/200/160?random=10" alt="景點2" onerror="this.style.background='linear-gradient(135deg, #28a745, #20c997)';">
+                    <img class="travel-img-7 sample-image" src="https://picsum.photos/200/160?random=11" alt="景點3" onerror="this.style.background='linear-gradient(135deg, #ffc107, #ff6b35)';">
+                    <img class="travel-img-7 sample-image" src="https://picsum.photos/200/160?random=12" alt="景點4" onerror="this.style.background='linear-gradient(135deg, #dc3545, #e83e8c)';">
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 8 - 疊加文字</div>
+                <div class="travel-img-8-wrapper">
+                    <img class="travel-img-8 sample-image" 
+                         src="https://picsum.photos/800/300?random=13" 
+                         alt="疊加文字圖片"
+                         onerror="this.style.background='linear-gradient(135deg, #2c3e50, #3498db)';">
+                    <div class="travel-img-8-overlay">
+                        <h3>北海道冬季限定</h3>
+                        <p>札幌雪祭、小樽運河、函館夜景，感受北國浪漫風情</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             五、說明文字樣式
+             ============================================ -->
+        <section class="section" id="section-desc">
+            <h2 class="section-title">📄 五、說明文字樣式 (Description Styles)</h2>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 1 - 基礎說明</div>
+                <div class="travel-desc-1">
+                    本行程包含來回機票、全程住宿、每日早餐及部分餐食。專業中文導遊全程陪同，讓您安心享受旅程。所有景點門票已包含在團費中，無需額外付費。
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 2 - 引用式</div>
+                <div class="travel-desc-2">
+                    「旅行不僅是到達目的地，更是沿途的風景與心靈的成長。讓我們一起踏上這段難忘的旅程，創造屬於您的美好回憶。」
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 3 - 資訊卡</div>
+                <div class="travel-desc-3">
+                    早鳥優惠：即日起至出發前 60 天報名並完成付款，每人可享 NT$2,000 折扣優惠。數量有限，額滿為止！
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 4 - 提醒框</div>
+                <div class="travel-desc-4">
+                    請確認您的護照有效期限至少 6 個月以上，並備妥相關簽證文件。如需代辦簽證服務，請提前 14 個工作天告知。
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 5 - 費用說明</div>
+                <div class="travel-desc-5">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <strong>日本東京五日遊</strong><br>
+                            <small style="color: #6c757d;">含機票+住宿+餐食+門票</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <small style="text-decoration: line-through; color: #6c757d;">原價 NT$42,900</small><br>
+                            <span class="price">NT$36,900</span> <small>起</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 6 - 特色標籤列表</div>
+                <div class="travel-desc-6">
+                    <strong>行程特色：</strong><br>
+                    <span class="tag">🎢 迪士尼樂園</span>
+                    <span class="tag">🗼 晴空塔</span>
+                    <span class="tag">🛍️ 銀座購物</span>
+                    <span class="tag">🍜 拉麵體驗</span>
+                    <span class="tag">🌸 賞櫻名所</span>
+                    <span class="tag">♨️ 溫泉旅館</span>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 7 - 時間表式</div>
+                <div class="travel-desc-7">
+                    <div class="time-item">
+                        <span class="time-label">07:00</span>
+                        <span>酒店享用早餐</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">09:00</span>
+                        <span>出發前往淺草寺，參觀雷門及仲見世商店街</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">12:00</span>
+                        <span>享用日式定食午餐</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">14:00</span>
+                        <span>前往晴空塔觀景台，俯瞰東京全景</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">18:00</span>
+                        <span>返回酒店，晚間自由活動</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-label">樣式 8 - 包含清單</div>
+                <div class="travel-desc-8">
+                    <strong>費用包含：</strong>
+                    <div class="include-item">來回經濟艙機票及機場稅</div>
+                    <div class="include-item">全程住宿（四星級酒店雙人房）</div>
+                    <div class="include-item">行程所列餐食</div>
+                    <div class="include-item">景點門票及交通費用</div>
+                    <div class="include-item">500萬旅遊責任險 + 20萬醫療險</div>
+                    <br>
+                    <strong>費用不含：</strong>
+                    <div class="exclude-item">護照申辦費用</div>
+                    <div class="exclude-item">個人消費及小費</div>
+                    <div class="exclude-item">單人房差額</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 20px; color: #6c757d; font-size: 14px;">
+            <p>旅遊業 CSS 樣式設計 | 響應式設計 (RWD) 支援桌面、平板、手機</p>
+            <p style="margin-top: 10px;">© 2024 Travel CSS Template - 所有樣式均可自由使用與修改</p>
+        </footer>
+    </div>
+
+    <script>
+        // 頁籤切換互動效果
+        document.querySelectorAll('[class^="travel-tabs-"] .tab-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.tab-item').forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 手風琴效果
+        document.querySelectorAll('.travel-itinerary-3').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
